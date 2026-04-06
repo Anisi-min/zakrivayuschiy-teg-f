@@ -195,7 +195,7 @@ main {
 
 .card__icon-button:focus-visible {
   outline: none;
-  border: 2px solid #000000;
+  border: 2px solid var(--color-btn);
 }
 
 .sparks {
@@ -216,7 +216,7 @@ main {
 
 .button:focus-visible {
   outline: none;
-  box-shadow: 2px 2px 0 0 #000000;
+  box-shadow: 2px 2px 0 0 var(--color-btn);
 }
 
 .button::before:hover {
