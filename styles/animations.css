@@ -31,3 +31,67 @@
     opacity: 1;
   }
 }
+
+.card__icon-button {
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  transition: border 0.3s ease;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;
+}
+
+.contour {
+  transition: fill linear 0.1s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--color-animation);
+  transition: fill linear 0.3s 0.06s;
+}
+
+.core {
+  transition: fill linear 0.3s 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill linear 0.3s 0s;
+}
+
+.like-icon:active .core {
+  fill: var(--color-animation);
+  transition: fill linear 0.3s 0s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--color-animation);
+  transition: fill linear 0.3s 0s;
+}
+
+.main-body {
+  transition: fill linear 0.3s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill linear 0.3s 0.05s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--color-animation);
+  transition: fill linear 0.3s 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--color-animation);
+  transition: fill linear 0.3s 0.05s;
+}

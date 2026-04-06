@@ -13,7 +13,7 @@
 .page {
   display: grid;
   justify-content: center;
-  font-family: var(--font-main);
+  font-family: var(--font-main), sans-serif;
   font-variation-settings: "wght" var(--font-weight-m);
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -26,7 +26,9 @@
   display: grid;
   gap: 20px;
   text-align: center;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
+  font-weight: var(--font-weight-b);
+  text-transform: uppercase;
   border: 2px solid var(--color-border);
   background-color: var(--color-bg);
   margin-block: 100px;
@@ -36,17 +38,11 @@
 }
 
 .header__logo {
-  font-family: var(--font-accent), fantasy;
-  font-weight: 400;
   font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
-  text-transform: uppercase;
 }
 
 .header__title {
-  font-family: var(--font-accent), fantasy;
-  font-weight: 400;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  text-transform: uppercase;
 }
 
 main {
@@ -72,25 +68,26 @@ main {
   border-block-end: 2px solid;
 }
 
-.card__content-image::before {
+.label {
   position: absolute;
-  content: "</HTML>";
+  mix-blend-mode: hard-light;
+  z-index: 10;
+  top: 25px;
+  right: 25px;
   font-size: 14px;
-  color: #000000dd;
+  font-weight: var(--font-weight-b);
+  text-transform: uppercase;
   font-family: var(--font-accent), fantasy;
   text-shadow:
     -1px 0 var(--color-shadow),
     0 1px var(--color-shadow),
     1px 0 var(--color-shadow),
     0 -1px var(--color-shadow);
-  mix-blend-mode: hard-light;
-  z-index: 10;
-  top: 25px;
-  right: 25px;
+  opacity: 0.5;
 }
 
 @supports ((text-stroke: 1px var(--color-shadow)) or (-webkit-text-stroke: 1px var(--color-shadow))) {
-  .card__block-image::before {
+  .label {
     -webkit-text-stroke: 1px var(--color-shadow);
     text-stroke: 1px var(--color-shadow);
     text-shadow: none;
@@ -147,7 +144,7 @@ main {
 }
 
 .card__text {
-  font-family: var(--font-main);
+  font-family: var(--font-main), sans-serif;
   line-height: 21px;
   font-size: 18px;
   font-variation-settings: "wght" var(--font-weight-m);
@@ -189,7 +186,6 @@ main {
   background-color: transparent;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: border 0.3s ease;
   padding: 0;
 }
 
@@ -200,67 +196,10 @@ main {
 .card__icon-button:focus-visible {
   outline: none;
   border: 2px solid #000000;
-  transition: border 0.3s ease;
-}
-
-.like-icon.is-liked .heart {
-  animation: heart 0.3s ease-in 0.1s;
-  transform-origin: center;
 }
 
 .sparks {
   opacity: 0;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s;
-}
-
-.contour {
-  transition: fill linear 0.1s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--color-animation);
-  transition: fill linear 0.3s 0.06s;
-}
-
-.core {
-  transition: fill linear 0.3s 0.03s;
-}
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill linear 0.3s 0s;
-}
-
-.like-icon:active .core {
-  fill: var(--color-animation);
-  transition: fill linear 0.3s 0s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--color-animation);
-  transition: fill linear 0.3s 0s;
-}
-
-.main-body {
-  transition: fill linear 0.3s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill linear 0.3s 0.05s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--color-animation);
-  transition: fill linear 0.3s 0.05s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--color-animation);
-  transition: fill linear 0.3s 0.05s;
 }
 
 .card__like-button {
@@ -287,12 +226,12 @@ main {
 .button__text {
   position: relative;
   font-family: var(--font-family-accent), fantasy;
-  font-weight: 400;
+  font-weight: var(--font-weight-b);
   font-size: 14px;
   line-height: 90%;
   mix-blend-mode: difference;
   z-index: 2;
-  color: #ffffff;
+  color: var(--dialog-bg);
 }
 
 /*dialog*/
@@ -302,7 +241,7 @@ main {
   mix-blend-mode: difference;
   z-index: 2;
   justify-self: center;
-  color: #ffffff;
+  color: var(--dialog-bg);
   inline-size: 28px;
 }
 
@@ -316,12 +255,11 @@ main {
   margin-block-end: 100px;
 }
 
-
 .save__memory-button {
   display: grid;
   justify-self: center;
   gap: 8px;
-  background-color: #ffffff;
+  background-color: var(--dialog-bg);
   padding: 15px 18px;
 }
 
@@ -347,7 +285,7 @@ main {
   background-color: rgb(0, 0, 0, 0.75);
 }
 
-.dialog__content{
+.dialog__content {
   display: grid;
   grid-template-columns: min-content 1fr;
   align-items: center;
@@ -362,13 +300,13 @@ main {
 
 .dialog__save-text {
   font-family: var(--font-accent), fantasy;
-  font-weight: 400;
+  font-weight: var(--font-weight-b);
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
 }
 
-.dialog__ok{
+.dialog__ok {
   text-transform: uppercase;
 }
 

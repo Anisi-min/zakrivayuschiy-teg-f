@@ -4,8 +4,10 @@
     --font-accent: "PressStart2P-Regular";
     --font-weight-m: 410;
     --font-weight-t: 715;
+    --font-weight-b: 400;
     --color-border: rgba(0, 0, 0, 1);
     --color-bg: rgba(255, 255, 255, 1);
+    --dialog-bg: rgba(255, 255, 255);
     --contour-color:#000000;
     --sparks-color:#ff0000;
     --color-shadow: #e6e1e1a2;
